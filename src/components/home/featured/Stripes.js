@@ -33,7 +33,7 @@ class Stripes extends Component {
     const { stripes } = this.state;
     return stripes.map((stripe, i) => (
       <Animate
-        key={stripe}
+        key={i}
         show
         start={{
           background: '#ffffff',
