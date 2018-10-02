@@ -261,7 +261,7 @@ footer .footer_discl {
 
 .match_block .match_wrapper .match_top .left,
 .match_block .match_wrapper .match_bottom .left {
-    background: #ffffff; 
+    background: #ffffff;
     font-family: 'Righteous', cursive;
     flex-grow: 1;
     margin-right: 5px;
@@ -287,14 +287,14 @@ footer .footer_discl {
 
 
 .match_block .match_wrapper .match_top .right,
-.match_block .match_wrapper .match_bottom .right { 
+.match_block .match_wrapper .match_bottom .right {
     background: #0e1731;
     width: 70px;
     color: #ffffff;
     font-size: 50px;
     text-align: center;
     padding-top: 6px;
-} 
+}
 
 .match_box_big {
     width:100%;
@@ -385,7 +385,7 @@ footer .footer_discl {
 ===============================*/
 
 
-.home_meetplayers { 
+.home_meetplayers {
     background: #ffffff;
 }
 
@@ -442,7 +442,7 @@ footer .footer_discl {
     bottom: 0px;
 }
 
-.player_card_wrapper .player_card_name span { 
+.player_card_wrapper .player_card_name span {
     display: block;
     font-size: 25px;
     color: #0d1831;
@@ -466,7 +466,7 @@ footer .footer_discl {
     padding: 80px 0px 30px 0px;
 }
 
-.promotion_wrapper .promotion_animation .left { 
+.promotion_wrapper .promotion_animation .left {
     text-transform: uppercase;
     text-transform: uppercase;
     font-size: 150px;
@@ -598,7 +598,7 @@ footer .footer_discl {
     width: 480px;
 }
 
- 
+
 .select_team_layout .wrapper{
     display: flex;
 }
@@ -613,6 +613,12 @@ footer .footer_discl {
     text-align: center;
     background: #98c6e9;
     color: #ffffff;
+}
+
+.select_team_layout input[name=result_local_input]::placeholder,
+.select_team_layout input[name=result_away_input]::placeholder {
+    color: white;
+    font-size: 14px;
 }
 
 .admin_submit button {
