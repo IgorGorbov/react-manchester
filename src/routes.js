@@ -6,6 +6,7 @@ import Home from './components/home';
 import SignIn from './components/signin';
 import Team from './components/team';
 import MatchesList from './components/matches';
+import Page404 from './components/ui/Page404';
 
 import Dashboard from './components/admin/Dashboard';
 import AdminMatches from './components/admin/matches';
@@ -83,6 +84,12 @@ const Routes = props => (
         exact
         path="/matches"
         component={MatchesList}
+      />
+      <PublicRoute
+        {...props}
+        restricted={false}
+        exact
+        component={Page404}
       />
     </Switch>
   </Layout>
