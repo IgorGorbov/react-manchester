@@ -10,28 +10,27 @@ import Paper from '@material-ui/core/Paper';
 
 import AdminLayout from '../../../hoc/AdminLayout';
 
-import { firebaseMatches } from '../../../firebase';
+import { firebasePlayers } from '../../../firebase';
 import { fireBaseLooper, reverseArray } from '../../ui/misc';
 
-class AdminMatches extends Component {
+class AdminPlayers extends Component {
   state = {
     isLoading: true,
-    matches: [],
+    players: [],
   };
 
   componentDidMount() {
-    firebaseMatches.once('value').then(snapshot => {
-      const matches = fireBaseLooper(snapshot);
-
+    firebasePlayers.once('value').then(snapshot => {
+      const players = fireBaseLooper(snapshot);
       this.setState({
         isLoading: false,
-        matches: reverseArray(matches),
+        players: reverseArray(players),
       });
     });
   }
 
   render() {
-    const { isLoading, matches } = this.state;
+    const { isLoading, players } = this.state;
     return (
       <AdminLayout>
         <div>
@@ -39,38 +38,27 @@ class AdminMatches extends Component {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Date</TableCell>
-                  <TableCell>Match</TableCell>
-                  <TableCell>Result</TableCell>
-                  <TableCell>Final</TableCell>
+                  <TableCell>First Name</TableCell>
+                  <TableCell>Last Name</TableCell>
+                  <TableCell>Number</TableCell>
+                  <TableCell>Position</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {matches
-                  ? matches.map(match => (
-                      <TableRow key={match.id}>
-                        <TableCell>{match.date}</TableCell>
+                {players
+                  ? players.map(player => (
+                      <TableRow key={player.id}>
                         <TableCell>
                           <Link
-                            to={`/admin-matches/edit/${match.id}`}
+                            to={`/admin-players/edit/${player.id}`}
                             style={{ color: '#98c5e9' }}
                           >
-                            {match.away}
+                            {player.name}
                           </Link>
                         </TableCell>
-                        <TableCell>
-                          {match.resultAway} <strong>-</strong>{' '}
-                          {match.resultLocal}
-                        </TableCell>
-                        <TableCell>
-                          {match.final === 'Yes' ? (
-                            <span className="matches_tag_red">Final</span>
-                          ) : (
-                            <span className="matches_tag_green">
-                              Not played yet
-                            </span>
-                          )}
-                        </TableCell>
+                        <TableCell>{player.lastname}</TableCell>
+                        <TableCell>{player.number}</TableCell>
+                        <TableCell>{player.position}</TableCell>
                       </TableRow>
                     ))
                   : null}
@@ -89,4 +77,4 @@ class AdminMatches extends Component {
   }
 }
 
-export default AdminMatches;
+export default AdminPlayers;

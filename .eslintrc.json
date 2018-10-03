@@ -12,6 +12,7 @@
         "jasmine": true
     },
     "rules": {
+        "react/prop-types": 1,
         "react/no-access-state-in-setstate": 1,
         "no-shadow": 0,
         "guard-for-in": 1,

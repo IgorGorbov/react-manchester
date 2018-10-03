@@ -7,6 +7,8 @@ import SignIn from './components/signin';
 import Dashboard from './components/admin/Dashboard';
 import AdminMatches from './components/admin/matches';
 import EditMatch from './components/admin/matches/EditMatch';
+import AdminPlayers from './components/admin/players';
+import EditPlayer from './components/admin/players/EditPlayer';
 
 import PrivateRoute from './components/authRoutes/privateRoute';
 import PublicRoute from './components/authRoutes/publicRoute';
@@ -14,6 +16,24 @@ import PublicRoute from './components/authRoutes/publicRoute';
 const Routes = props => (
   <Layout>
     <Switch>
+      <PrivateRoute
+        {...props}
+        exact
+        path="/admin-players/edit"
+        component={EditPlayer}
+      />
+      <PrivateRoute
+        {...props}
+        exact
+        path="/admin-players/edit/:id"
+        component={EditPlayer}
+      />
+      <PrivateRoute
+        {...props}
+        exact
+        path="/admin-players"
+        component={AdminPlayers}
+      />
       <PrivateRoute
         {...props}
         exact
