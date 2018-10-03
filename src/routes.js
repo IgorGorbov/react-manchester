@@ -4,6 +4,9 @@ import { Switch } from 'react-router-dom';
 import Layout from './hoc/Layout';
 import Home from './components/home';
 import SignIn from './components/signin';
+import Team from './components/team';
+import MatchesList from './components/matches';
+
 import Dashboard from './components/admin/Dashboard';
 import AdminMatches from './components/admin/matches';
 import EditMatch from './components/admin/matches/EditMatch';
@@ -66,6 +69,20 @@ const Routes = props => (
         exact
         path="/"
         component={Home}
+      />
+      <PublicRoute
+        {...props}
+        restricted={false}
+        exact
+        path="/team"
+        component={Team}
+      />
+      <PublicRoute
+        {...props}
+        restricted={false}
+        exact
+        path="/matches"
+        component={MatchesList}
       />
     </Switch>
   </Layout>

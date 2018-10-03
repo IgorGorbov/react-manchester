@@ -11,7 +11,7 @@ const AdminNav = props => {
       linkTo: '/admin-matches',
     },
     {
-      title: 'Add matche',
+      title: 'Add match',
       linkTo: '/admin-matches/edit',
     },
     {
