@@ -18,7 +18,7 @@ import PrivateRoute from './components/authRoutes/privateRoute';
 import PublicRoute from './components/authRoutes/publicRoute';
 
 const Routes = props => (
-  <Layout>
+  <Layout {...props}>
     <Switch>
       <PrivateRoute
         {...props}
@@ -85,12 +85,7 @@ const Routes = props => (
         path="/matches"
         component={MatchesList}
       />
-      <PublicRoute
-        {...props}
-        restricted={false}
-        exact
-        component={Page404}
-      />
+      <PublicRoute {...props} restricted={false} exact component={Page404} />
     </Switch>
   </Layout>
 );

@@ -5,7 +5,7 @@ import Matches from './matches';
 import MeetPlayers from './meetPlayers';
 import Promotion from './promotion';
 
-const Home = props => (
+const Home = ({ user }) => (
   <div className="bck_blue">
     <Featured />
     <Matches />
